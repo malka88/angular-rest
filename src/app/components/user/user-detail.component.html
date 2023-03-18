@@ -1,0 +1,16 @@
+<div *ngIf="user" class="container m-4">
+  <div class="card w-100">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-4 text-center">
+          <img *ngIf="user.avatar" [src]="user.avatar" class="card-img-top" [alt]="user.first_name">
+          <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+        </div>
+        <div class="col">
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit, ante at commodo iaculis, eros magna tincidunt tortor, non vestibulum arcu eros a diam. Cras non mauris varius, rutrum ex id, pharetra sapien. Nunc ullamcorper magna nisl, quis tincidunt lectus finibus vel. Suspendisse dui metus, dapibus ac velit quis, elementum pellentesque nulla. Vestibulum vestibulum, dolor ut semper varius, orci turpis elementum arcu, eu venenatis orci ipsum non nunc. Nunc mauris dolor, congue congue libero nec, ornare consequat ipsum. Mauris pretium sapien eget augue interdum maximus. Mauris interdum, lacus sed imperdiet tempus, nibh massa tincidunt ligula, in lobortis enim felis et diam. Morbi quis sem id purus feugiat iaculis in non arcu. Aenean mattis massa eu turpis euismod, nec porta odio cursus. Donec condimentum nisl nunc, nec sodales velit eleifend vitae. Etiam id consectetur neque.</p>
+          <a [routerLink]="['/home']" class="btn btn-secondary">User List</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<ul class="list-group d-flex flex-row flex-wrap">
+  <li class="list-group-item w-25 d-flex flex-column align-items-center" *ngFor="let user of users">
+    <img class="me-2" [src]="user.avatar" [alt]="user.first_name">
+    <p class="me-2">{{ user.first_name}} {{ user.last_name }}</p>
+    <button class="btn btn-secondary" (click)="userDetails(user.id)">Details</button>
+  </li>
+</ul>
