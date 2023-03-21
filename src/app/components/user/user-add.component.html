@@ -1,0 +1,23 @@
+<div class="container m-4">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label class="me-1" for="first_name">First Name:</label>
+      <input type="text" id="first_name" class="formcontrol">
+      <div *ngIf="submitted && userForm.controls['first_name'].errors" class="error">
+        <div *ngIf="userForm.controls['first_name'].errors['required']">
+          Your first name is required
+        </div>
+      </div>
+    </div>
+    <div class="form-group mt-2">
+      <label class="me-1" for="last_name">Last Name:</label>
+      <input type="text" id="last_name" class="formcontrol">
+      <div *ngIf="submitted && userForm.controls['last_name'].errors" class="error">
+        <div *ngIf="userForm.controls['last_name'].errors['required']">
+          Your last name is required
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success mt-2">Save</button>
+  </form>
+</div>

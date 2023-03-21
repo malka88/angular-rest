@@ -1,7 +1,18 @@
-<ul class="list-group d-flex flex-row flex-wrap">
-  <li class="list-group-item w-25 d-flex flex-column align-items-center" *ngFor="let user of users">
-    <img class="me-2" [src]="user.avatar" [alt]="user.first_name">
-    <p class="me-2">{{ user.first_name}} {{ user.last_name }}</p>
-    <button class="btn btn-secondary" (click)="userDetails(user.id)">Details</button>
-  </li>
-</ul>
+<app-loading *ngIf="loading"></app-loading>
+<div class="m-4 d-flex flex-column align-items-center" *ngIf="!loading">
+  <div class="btn-toolbar" role="toolbar">
+    <div class="btn-group">
+      <button class="btn btn-success" (click)="addUser()">Add User</button>
+    </div>
+  </div>
+  <ul class="mt-2 p-0 d-flex justify-content-center flex-wrap">
+    <li class="card w-25 p-2 m-1 d-flex flex-column align-items-center" *ngFor="let user of users">
+      <img class="me-2" [src]="user.avatar | noimage" [alt]="user.first_name">
+      <p class="me-2">{{ user.first_name}} {{ user.last_name }}</p>
+      <div>
+        <button class="btn btn-secondary me-1" (click)="userDetails(user.id)">Details</button>
+        <button class="btn btn-danger" title="Delete user" (click)="deleteUser(user)">Del</button>
+      </div>
+    </li>
+  </ul>
+</div>

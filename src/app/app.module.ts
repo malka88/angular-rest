@@ -11,6 +11,10 @@ import {HttpClientModule} from "@angular/common/http";
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { UserDetailComponent } from './components/user/user-detail.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { UserAddComponent } from './components/user/user-add.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { NoimagePipe } from './pipes/noimage.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,10 @@ import { UserDetailComponent } from './components/user/user-detail.component';
     AboutComponent,
     ContactComponent,
     HomeComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    UserAddComponent,
+    LoadingComponent,
+    NoimagePipe
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,9 @@ import { UserDetailComponent } from './components/user/user-detail.component';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
